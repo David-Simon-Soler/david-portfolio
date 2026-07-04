@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root{
+  --paper:#FAF8F4;
+  --ink:#12201C;
+  --ink-soft:#4A5652;
+  --forest:#3B6E63;
+  --forest-dark:#20342F;
+  --clay:#C7784A;
+  --line:#DFD9CC;
+}
+
+html, body, #root{
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x: clip;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(59,110,99,0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(250,248,244,0.98) 100%);
+}
+
+.font-display{
+  font-family:'Fraunces', serif;
+}
+
+.font-mono{
+  font-family:'IBM Plex Mono', monospace;
+}
+
+.hero-heading{
+  background: linear-gradient(180deg, var(--ink) 0%, var(--forest) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Título del Hero sobre fondo negro: gradiente blanco -> gris claro con glow sutil */
+.hero-heading-light{
+  background: linear-gradient(180deg, #ffffff 0%, #A6ACB2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 26px rgba(255,255,255,0.18));
+}
+
+.panel-surface{
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(18,32,28,0.08);
+  box-shadow: 0 20px 60px rgba(18,32,28,0.06);
+  backdrop-filter: blur(12px);
+}
+
+.soft-chip{
+  border: 1px solid rgba(18,32,28,0.12);
+  background: rgba(255,255,255,0.7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+::selection{
+  background: var(--forest);
+  color: var(--paper);
+}
+
+/* Deriva horizontal de las líneas topográficas del Hero.
+   El translateX final debe coincidir con WAVELENGTH en TopoLines.tsx (360). */
+@keyframes topo-drift{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-360px); }
+}
+.topo-drift{
+  animation: topo-drift 30s linear infinite;
+}
+.topo-drift--slow{
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+
+/* Respiración lenta del glow: da vida al fondo sin distraer del texto */
+@keyframes topo-pulse{
+  0%, 100%{ opacity: 0.55; }
+  50%{ opacity: 1; }
+}
+.topo-pulse{
+  animation: topo-pulse 9s ease-in-out infinite;
+}
+
+/* Botón de contacto: gradiente animado en hover (verde/terracota) */
+.btn-gradient{
+  background: linear-gradient(123deg, #14231F 0%, #3B6E63 30%, #2A4F46 55%, #C7784A 100%);
+  background-size: 220% 220%;
+  background-position: 0% 50%;
+  transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
+}
+.btn-gradient:hover{
+  background-position: 100% 50%;
+  transform: translateY(-1px);
+}
+
+/* Scroll horizontal infinito del ticker (contenido duplicado -> -50%) */
+@keyframes ticker-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+.ticker-track{
+  animation: ticker-scroll 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .topo-drift,
+  .topo-pulse,
+  .ticker-track{
+    animation: none;
+  }
+}
