@@ -1,31 +1,46 @@
-# David Simón Soler — Portfolio
+#David Simón Soler — Portfolio
 
-Portfolio hecho con React + TypeScript + Vite + Tailwind CSS v4 + Framer Motion.
+Portfolio personal de David Simón Soler, sociólogo especializado en marketing digital, IA aplicada y creatividad.
 
-## Cómo ejecutarlo en local
+🔗 Ver en producción
 
-```
-npm install
+Stack
+
+
+React + Vite
+Tailwind CSS
+Framer Motion (animaciones y transiciones)
+
+
+Estructura del portfolio
+
+
+Hero — presentación con patrón animado de fondo y navegación principal.
+Marquee — cintas de texto con herramientas y proyectos, reactivas al scroll.
+Sobre mí — trayectoria y áreas de trabajo (Sociología, IA aplicada, Creatividad y contenido, Datos como apoyo).
+Servicios — 5 líneas de servicio: contenido con IA generativa, diseño gráfico, desarrollo web con IA, automatización de procesos, SEO y análisis de datos.
+Proyectos — casos reales: Last Memory, DataPulse, La Versilia, Lucy Eventos, Floristería Lola, proyectos web propios y GitHub.
+IA aplicada: skills — ejemplos reales de skills de IA construidas (generador de copys, generador de brief SEO).
+Contenido y creatividad — gestión de contenido en TikTok, Instagram y YouTube con herramientas de IA generativa.
+Contacto — formulario de contacto.
+
+
+Desarrollo local
+
+bashnpm install
 npm run dev
-```
 
-Se abrirá en http://localhost:5173
+Build de producción
 
-## Cómo desplegarlo en Vercel
+bashnpm run build
 
-1. Sube esta carpeta a un repositorio de GitHub (igual que hiciste con DataPulse).
-2. Entra en vercel.com, "Add New Project", importa el repo.
-3. Vercel detecta automáticamente que es un proyecto Vite. Dale a Deploy.
-4. Listo, te da una URL pública tipo `tu-proyecto.vercel.app`.
+Genera la carpeta dist/ lista para desplegar.
 
-## Estructura
+Despliegue
 
-- `src/sections/` — cada bloque de la página (Hero, About, Proyectos, etc.)
-- `src/components/` — piezas reutilizables (FadeIn, Magnet, botones, texto animado)
-- `src/index.css` — colores, tipografías y estilos globales
+Desplegado en Vercel, con integración automática desde la rama main de este repositorio.
 
-## Pendiente de personalizar
+Autor
 
-- Sustituir el monograma "DS" del hero por una foto real si quieres (en `HeroSection.tsx`)
-- Añadir capturas reales en vez de las etiquetas de texto del marquee (en `MarqueeSection.tsx`)
-- Sección de prompts / skills de IA si quieres añadirla como bloque nuevo
+David Simón Soler
+GitHub
