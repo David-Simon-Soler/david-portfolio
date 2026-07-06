@@ -2,7 +2,7 @@
 
 Portfolio personal de David Simón Soler, sociólogo especializado en marketing digital, IA aplicada y creatividad.
 
-🔗 [Ver en producción](https://david-portfolio.vercel.app)
+🔗 [Ver en producción](https://david-portfolio-brown-seven.vercel.app/)
 
 ## Stack
 
